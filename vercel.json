@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/lambda.php": {
+      "runtime": "vercel-php@8.2"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/lambda.php" }
+  ]
+}
