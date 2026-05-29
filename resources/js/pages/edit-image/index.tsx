@@ -215,7 +215,9 @@ export default function EditPage({ recentEdits: initialEdits }: Props) {
                 if (updated.status === 'pending' || updated.status === 'processing') {
                     startPolling(updated);
                 }
-            } catch {}
+            } catch {
+                // Polling errors are non-fatal; next tick will retry.
+            }
         }, 3000);
 
         setPollTimer(timer);
@@ -267,7 +269,9 @@ export default function EditPage({ recentEdits: initialEdits }: Props) {
             await axios.delete(`/dashboard/edit-image/${id}`);
             setHistory((prev) => prev.filter((e) => e.id !== id));
             if (currentResult?.id === id) setCurrentResult(null);
-        } catch {}
+        } catch {
+            // Delete failed silently; user can refresh the list.
+        }
     };
 
     return (

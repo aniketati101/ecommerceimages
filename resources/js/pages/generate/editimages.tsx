@@ -18,7 +18,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 
 
-export default function edit() {
+export default function EditImages() {
     
     const [prompt, setPrompt] = useState("Young female model");
     const [selectedValue, setSelectedValue] = useState('');
