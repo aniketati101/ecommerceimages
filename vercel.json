@@ -3,10 +3,16 @@
   "outputDirectory": "public",
   "functions": {
     "api/lambda.php": {
-      "runtime": "vercel-php@0.6.2"
+      "runtime": "vercel-php@0.6.2",
+      "maxDuration": 30
     }
   },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/lambda.php" }
+  "routes": [
+    { "src": "/build/(.*)", "dest": "/build/$1" },
+    {
+      "src": "/(.*\\.(?:css|js|ico|png|jpg|jpeg|gif|svg|woff2?|webp|txt|xml|json))",
+      "dest": "/$1"
+    },
+    { "src": "/(.*)", "dest": "/api/lambda.php" }
   ]
 }
