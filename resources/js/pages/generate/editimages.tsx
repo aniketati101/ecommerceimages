@@ -1,8 +1,7 @@
 import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
-import { Head } from '@inertiajs/react';
-import { Inertia } from '@inertiajs/inertia';
+import { Head, router } from '@inertiajs/react';
 import { Upload, Save, PersonStanding, LoaderCircle } from "lucide-react";
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { Button } from "@/components/ui/button";
@@ -46,7 +45,7 @@ export default function EditImages() {
         formData.append("photos", selectedValue);
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        Inertia.post(route("dashboard.generates.store"), formData, {
+        router.post(route("dashboard.generates.store"), formData, {
         forceFormData: true,
             onSuccess: () => {
                 // reset local state

@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@headlessui/react";
-import { Inertia } from "@inertiajs/inertia";
+import { router } from "@inertiajs/react";
 import { route } from 'ziggy-js';
 
 // ─── Category options matching common VTO garment types ──────────────────────
@@ -133,7 +133,7 @@ export default function CustomModelForm() {
     formData.append("description", description);
     formData.append("back_description", backDescription);
 
-    Inertia.post(route("dashboard.clothing.create"), formData, {
+    router.post(route("dashboard.clothing.create"), formData, {
       forceFormData: true,
       onSuccess: () => {
         handleReset();
