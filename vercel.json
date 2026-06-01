@@ -1,28 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "public",
   "functions": {
     "api/lambda.php": {
-      "runtime": "vercel-php@0.6.2",
+      "runtime": "vercel-php@0.7.3",
       "maxDuration": 30
     }
   },
   "routes": [
-    { "src": "/build/(.*)", "dest": "/build/$1" },
     {
-      "src": "/(.*\\.(?:css|js|ico|png|jpg|jpeg|gif|svg|woff2?|webp|txt|xml|json))",
-      "dest": "/$1"
-    },
-    { "src": "/(.*)", "dest": "/api/lambda.php" }
-  ],
-  "env": {
-    "APP_ENV": "production",
-    "APP_DEBUG": "false",
-    "APP_URL": "https://ecommerceimages.vercel.app",
-    "LOG_CHANNEL": "stderr",
-    "CACHE_STORE": "array",
-    "SESSION_DRIVER": "cookie",
-    "QUEUE_CONNECTION": "sync",
-    "VIEW_COMPILED_PATH": "/tmp/laravel/storage/framework/views"
-  }
+      "src": "/(.*)",
+      "dest": "/api/lambda.php"
+    }
+  ]
 }
