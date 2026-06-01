@@ -11,7 +11,7 @@ $root = dirname(__DIR__);
  * Vercel serverless: only /tmp is writable. Prepare dirs and defaults before Laravel boots.
  */
 if (getenv('VERCEL') || getenv('VERCEL_ENV')) {
-    $tmp = '/tmp/laravel';
+    $tmp = '../tmp/laravel';
 
     foreach (
         [
@@ -59,17 +59,17 @@ if (getenv('VERCEL') || getenv('VERCEL_ENV')) {
     }
 }
 
-if (file_exists($maintenance = $root.'/storage/framework/maintenance.php')) {
+if (file_exists($maintenance = $root.'/../storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
-require $root.'/vendor/autoload.php';
+require $root.'/../vendor/autoload.php';
 
 /** @var Application $app */
-$app = require_once $root.'/bootstrap/app.php';
+$app = require_once $root.'/../bootstrap/app.php';
 
 if (getenv('VERCEL') || getenv('VERCEL_ENV')) {
-    $storagePath = getenv('APP_STORAGE_PATH') ?: '/tmp/laravel/storage';
+    $storagePath = getenv('APP_STORAGE_PATH') ?: '/../tmp/laravel/storage';
     $app->useStoragePath($storagePath);
 }
 

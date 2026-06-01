@@ -149,7 +149,7 @@ store.form = storeForm
 * @see app/Http/Controllers/UpscaleImageController.php:160
 * @route '/api/upscale/{job}'
 */
-export const show = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -164,7 +164,7 @@ show.definition = {
 * @see app/Http/Controllers/UpscaleImageController.php:160
 * @route '/api/upscale/{job}'
 */
-show.url = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+show.url = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { job: args }
     }
@@ -198,7 +198,7 @@ show.url = (args: { job: string | number | { id: string | number } } | [job: str
 * @see app/Http/Controllers/UpscaleImageController.php:160
 * @route '/api/upscale/{job}'
 */
-show.get = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -208,7 +208,7 @@ show.get = (args: { job: string | number | { id: string | number } } | [job: str
 * @see app/Http/Controllers/UpscaleImageController.php:160
 * @route '/api/upscale/{job}'
 */
-show.head = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -218,7 +218,7 @@ show.head = (args: { job: string | number | { id: string | number } } | [job: st
 * @see app/Http/Controllers/UpscaleImageController.php:160
 * @route '/api/upscale/{job}'
 */
-const showForm = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+const showForm = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, options),
     method: 'get',
 })
@@ -228,7 +228,7 @@ const showForm = (args: { job: string | number | { id: string | number } } | [jo
 * @see app/Http/Controllers/UpscaleImageController.php:160
 * @route '/api/upscale/{job}'
 */
-showForm.get = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+showForm.get = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, options),
     method: 'get',
 })
@@ -238,7 +238,7 @@ showForm.get = (args: { job: string | number | { id: string | number } } | [job:
 * @see app/Http/Controllers/UpscaleImageController.php:160
 * @route '/api/upscale/{job}'
 */
-showForm.head = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+showForm.head = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, {
         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
             _method: 'HEAD',
@@ -255,7 +255,7 @@ show.form = showForm
 * @see app/Http/Controllers/UpscaleImageController.php:222
 * @route '/api/upscale/{job}'
 */
-export const destroy = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -270,7 +270,7 @@ destroy.definition = {
 * @see app/Http/Controllers/UpscaleImageController.php:222
 * @route '/api/upscale/{job}'
 */
-destroy.url = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { job: args }
     }
@@ -304,7 +304,7 @@ destroy.url = (args: { job: string | number | { id: string | number } } | [job: 
 * @see app/Http/Controllers/UpscaleImageController.php:222
 * @route '/api/upscale/{job}'
 */
-destroy.delete = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -314,7 +314,7 @@ destroy.delete = (args: { job: string | number | { id: string | number } } | [jo
 * @see app/Http/Controllers/UpscaleImageController.php:222
 * @route '/api/upscale/{job}'
 */
-const destroyForm = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+const destroyForm = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: destroy.url(args, {
         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
             _method: 'DELETE',
@@ -329,7 +329,7 @@ const destroyForm = (args: { job: string | number | { id: string | number } } | 
 * @see app/Http/Controllers/UpscaleImageController.php:222
 * @route '/api/upscale/{job}'
 */
-destroyForm.delete = (args: { job: string | number | { id: string | number } } | [job: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+destroyForm.delete = (args: { job: number | { id: number } } | [job: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: destroy.url(args, {
         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
             _method: 'DELETE',

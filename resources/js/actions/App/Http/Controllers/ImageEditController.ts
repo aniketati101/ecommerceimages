@@ -234,7 +234,7 @@ index.form = indexForm
 * @see app/Http/Controllers/ImageEditController.php:92
 * @route '/dashboard/edits/{imageEdit}'
 */
-export const show = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -249,7 +249,7 @@ show.definition = {
 * @see app/Http/Controllers/ImageEditController.php:92
 * @route '/dashboard/edits/{imageEdit}'
 */
-show.url = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+show.url = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { imageEdit: args }
     }
@@ -283,7 +283,7 @@ show.url = (args: { imageEdit: string | number | { id: string | number } } | [im
 * @see app/Http/Controllers/ImageEditController.php:92
 * @route '/dashboard/edits/{imageEdit}'
 */
-show.get = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
@@ -293,7 +293,7 @@ show.get = (args: { imageEdit: string | number | { id: string | number } } | [im
 * @see app/Http/Controllers/ImageEditController.php:92
 * @route '/dashboard/edits/{imageEdit}'
 */
-show.head = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -303,7 +303,7 @@ show.head = (args: { imageEdit: string | number | { id: string | number } } | [i
 * @see app/Http/Controllers/ImageEditController.php:92
 * @route '/dashboard/edits/{imageEdit}'
 */
-const showForm = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+const showForm = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, options),
     method: 'get',
 })
@@ -313,7 +313,7 @@ const showForm = (args: { imageEdit: string | number | { id: string | number } }
 * @see app/Http/Controllers/ImageEditController.php:92
 * @route '/dashboard/edits/{imageEdit}'
 */
-showForm.get = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+showForm.get = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, options),
     method: 'get',
 })
@@ -323,7 +323,7 @@ showForm.get = (args: { imageEdit: string | number | { id: string | number } } |
 * @see app/Http/Controllers/ImageEditController.php:92
 * @route '/dashboard/edits/{imageEdit}'
 */
-showForm.head = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+showForm.head = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: show.url(args, {
         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
             _method: 'HEAD',
@@ -340,7 +340,7 @@ show.form = showForm
 * @see app/Http/Controllers/ImageEditController.php:108
 * @route '/dashboard/edits/{imageEdit}/poll'
 */
-export const poll = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const poll = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: poll.url(args, options),
     method: 'post',
 })
@@ -355,7 +355,7 @@ poll.definition = {
 * @see app/Http/Controllers/ImageEditController.php:108
 * @route '/dashboard/edits/{imageEdit}/poll'
 */
-poll.url = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+poll.url = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { imageEdit: args }
     }
@@ -389,7 +389,7 @@ poll.url = (args: { imageEdit: string | number | { id: string | number } } | [im
 * @see app/Http/Controllers/ImageEditController.php:108
 * @route '/dashboard/edits/{imageEdit}/poll'
 */
-poll.post = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+poll.post = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: poll.url(args, options),
     method: 'post',
 })
@@ -399,7 +399,7 @@ poll.post = (args: { imageEdit: string | number | { id: string | number } } | [i
 * @see app/Http/Controllers/ImageEditController.php:108
 * @route '/dashboard/edits/{imageEdit}/poll'
 */
-const pollForm = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+const pollForm = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: poll.url(args, options),
     method: 'post',
 })
@@ -409,7 +409,7 @@ const pollForm = (args: { imageEdit: string | number | { id: string | number } }
 * @see app/Http/Controllers/ImageEditController.php:108
 * @route '/dashboard/edits/{imageEdit}/poll'
 */
-pollForm.post = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+pollForm.post = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: poll.url(args, options),
     method: 'post',
 })
@@ -421,7 +421,7 @@ poll.form = pollForm
 * @see app/Http/Controllers/ImageEditController.php:125
 * @route '/dashboard/edits/{imageEdit}'
 */
-export const destroy = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -436,7 +436,7 @@ destroy.definition = {
 * @see app/Http/Controllers/ImageEditController.php:125
 * @route '/dashboard/edits/{imageEdit}'
 */
-destroy.url = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { imageEdit: args }
     }
@@ -470,7 +470,7 @@ destroy.url = (args: { imageEdit: string | number | { id: string | number } } | 
 * @see app/Http/Controllers/ImageEditController.php:125
 * @route '/dashboard/edits/{imageEdit}'
 */
-destroy.delete = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -480,7 +480,7 @@ destroy.delete = (args: { imageEdit: string | number | { id: string | number } }
 * @see app/Http/Controllers/ImageEditController.php:125
 * @route '/dashboard/edits/{imageEdit}'
 */
-const destroyForm = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+const destroyForm = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: destroy.url(args, {
         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
             _method: 'DELETE',
@@ -495,7 +495,7 @@ const destroyForm = (args: { imageEdit: string | number | { id: string | number 
 * @see app/Http/Controllers/ImageEditController.php:125
 * @route '/dashboard/edits/{imageEdit}'
 */
-destroyForm.delete = (args: { imageEdit: string | number | { id: string | number } } | [imageEdit: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+destroyForm.delete = (args: { imageEdit: number | { id: number } } | [imageEdit: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: destroy.url(args, {
         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
             _method: 'DELETE',
