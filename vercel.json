@@ -24,5 +24,9 @@
     "SESSION_DRIVER": "cookie",
     "QUEUE_CONNECTION": "sync",
     "VIEW_COMPILED_PATH": "/tmp/laravel/storage/framework/views"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
   }
 }
